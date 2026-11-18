@@ -366,13 +366,13 @@ svg .lbl{fill:var(--ink)}
   <div class="panel">
     <h3>Benchmark rates (%)</h3>
     <div class="row">
-      <label class="fld">2-yr CMT<input type="number" step="0.01" id="r2y" value="4.66"></label>
-      <label class="fld">5-yr CMT<input type="number" step="0.01" id="r5y" value="4.78"></label>
-      <label class="fld">10-yr CMT<input type="number" step="0.01" id="r10y" value="4.97"></label>
-      <label class="fld">3-mo Term SOFR<input type="number" step="0.01" id="s3m" value="4.05"></label>
-      <label class="fld">12-mo Term SOFR<input type="number" step="0.01" id="s12m" value="4.05"></label>
+      <label class="fld">2-yr CMT<input type="number" step="0.01" id="r2y" value="4.80"></label>
+      <label class="fld">5-yr CMT<input type="number" step="0.01" id="r5y" value="4.90"></label>
+      <label class="fld">10-yr CMT<input type="number" step="0.01" id="r10y" value="5.10"></label>
+      <label class="fld">3-mo Term SOFR<input type="number" step="0.01" id="s3m" value="4.18"></label>
+      <label class="fld">12-mo Term SOFR<input type="number" step="0.01" id="s12m" value="4.63"></label>
     </div>
-    <p class="hint">Used for the floating-rate series. Defaults are Treasury closes of Oct 23–25, 2026 and 3-month Term SOFR of Oct 23, 2026; the 12-month value is a placeholder, edit it. Spread adjustments of 0.26161% (3-mo) and 0.71513% (12-mo) are applied where the contract says "spread-adjusted".</p>
+    <p class="hint">Used for the floating-rate series. Defaults are U.S. Treasury par yields (2-, 5- and 10-year) and CME Term SOFR rates (3- and 12-month) for Nov 17, 2026; you can edit them. Spread adjustments of 0.26161% (3-mo) and 0.71513% (12-mo) are applied where the contract says "spread-adjusted".</p>
   </div>
 </section>
 
@@ -444,7 +444,7 @@ svg .lbl{fill:var(--ink)}
 <section id="exhibit2" style="display:grid;gap:14px">
   <div><h2>Exhibit 2. Large institutional holders</h2></div>
   <div class="panel" style="display:grid;gap:10px">
-    <p>Large institutional investors file a quarterly Form 13F with the SEC detailing their portfolio holdings. However, FNMA, FMCC and their preferred securities are not required to be reported, because they are not exchange-traded securities. As a result, the full list of large owners is largely unknown. Holdings are known for mutual funds and publicly traded investment firms, such as Pershing Square and American Funds, which disclose their positions separately.</p>
+    <p>Large institutional investors file a quarterly Form 13F with the SEC detailing their portfolio holdings. However, FNMA, FMCC and their preferred securities are not required to be reported, because they are not exchange-traded securities. As a result, the full list of large owners is largely unknown. Holdings are known for mutual funds and publicly traded investment firms, such as Pershing Square, American Funds, T. Rowe Price and Morgan Stanley, which disclose their positions separately.</p>
     <h3>Pershing Square Holdings, Ltd. (PSHZF): common as of September 30, 2026; preferred as of December 31, 2025<sup><a href="#fn-psh" style="color:var(--accent)">2</a></sup></h3>
     <div class="tablebox fit"><table>
       <thead><tr><th>Common<br>stock</th><th class="n">Shares</th><th class="n">Approx. %<br>of common<br>outstanding</th><th class="n">Market value<br>Sep 30, 2026</th><th class="n">% of PSH<br>net assets</th></tr></thead>
@@ -478,19 +478,41 @@ svg .lbl{fill:var(--ink)}
     <h3>American Funds: The Investment Company of America, portfolio holdings as of June 30, 2026<sup><a href="#fn-ica" style="color:var(--accent)">6</a></sup></h3>
     <div class="tablebox fit"><table>
       <thead><tr><th>Junior<br>preferred</th><th>Series</th><th class="n">Shares</th><th class="n">Approx. %<br>of series<br>outstanding</th></tr></thead>
-      <tbody><tr><td><span class="tick">FMCKJ</span></td><td>Freddie Mac Series Z</td><td class="n">12,714,951</td><td class="n">~5.3%</td></tr><tr><td><span class="tick">FNMAT</span></td><td>Fannie Mae Series T</td><td class="n">11,530,150</td><td class="n">~13.0%</td></tr><tr><td><span class="tick">FNMAS</span></td><td>Fannie Mae Series S</td><td class="n">7,688,868</td><td class="n">~2.7%</td></tr><tr><td><span class="tick">FNMFN</span></td><td>Fannie Mae Series O</td><td class="n">4,810,038</td><td class="n">~9.6%</td></tr><tr><td><span class="tick">FNMAJ</span></td><td>Fannie Mae Series R</td><td class="n">3,026,482</td><td class="n">~14.3%</td></tr></tbody></table></div>
+      <tbody><tr><td><span class="tick">FMCKJ</span></td><td>Freddie Mac Series Z</td><td class="n">12,714,951</td><td class="n">~5.3%</td></tr><tr><td><span class="tick">FNMAT</span></td><td>Fannie Mae Series T</td><td class="n">11,530,150</td><td class="n">~13.0%</td></tr><tr><td><span class="tick">FNMAS</span></td><td>Fannie Mae Series S</td><td class="n">7,688,868</td><td class="n">~2.7%</td></tr><tr><td><span class="tick">FNMFN</span></td><td>Fannie Mae Series O</td><td class="n">4,810,038</td><td class="n">~9.6%</td></tr><tr><td><span class="tick">FNMAJ</span></td><td>Fannie Mae Series R</td><td class="n">3,026,482</td><td class="n">~14.3%</td></tr><tr><td><span class="tick">FNMAH</span></td><td>Fannie Mae Series P</td><td class="n">564,368</td><td class="n">~1.4%</td></tr></tbody></table></div>
     <p class="hint">Share counts as listed in the fund’s June 30, 2026 portfolio holdings; no FNMA or FMCC common stock was listed.</p>
     <h3>American Funds: Capital World Growth and Income Fund, portfolio holdings as of August 31, 2026<sup><a href="#fn-cwgi" style="color:var(--accent)">7</a></sup></h3>
     <div class="tablebox fit"><table>
       <thead><tr><th>Junior<br>preferred</th><th>Series</th><th class="n">Shares</th><th class="n">Approx. %<br>of series<br>outstanding</th></tr></thead>
       <tbody><tr><td><span class="tick">FNMAS</span></td><td>Fannie Mae Series S</td><td class="n">11,997,951</td><td class="n">~4.3%</td></tr><tr><td><span class="tick">FMCKJ</span></td><td>Freddie Mac Series Z</td><td class="n">4,633,998</td><td class="n">~1.9%</td></tr></tbody></table></div>
     <p class="hint">Share counts as listed in the fund’s August 31, 2026 portfolio holdings; no FNMA or FMCC common stock was listed.</p>
-    <h3>Capital Group (American Funds) combined: the three funds above</h3>
+    <h3>American Funds: SMALLCAP World Fund, portfolio holdings<sup><a href="#fn-scwf" style="color:var(--accent)">14</a></sup></h3>
+    <div class="tablebox fit"><table>
+      <thead><tr><th>Junior<br>preferred</th><th>Series</th><th class="n">Shares</th><th class="n">Approx. %<br>of series<br>outstanding</th></tr></thead>
+      <tbody><tr><td><span class="tick">FMCKJ</span></td><td>Freddie Mac Series Z</td><td class="n">3,980,985</td><td class="n">~1.7%</td></tr></tbody></table></div>
+    <p class="hint">Share count as listed in the fund’s latest quarterly portfolio holdings; no FNMA or FMCC common stock is included here.</p>
+    <h3>Capital Group (American Funds) combined: the four funds above</h3>
     <div class="tablebox fit"><table>
       <thead><tr><th>Security</th><th class="n">Combined<br>shares</th><th class="n">Approx. %<br>of class<br>or series</th></tr></thead>
-      <tbody><tr><td><span class="tick">FNMA</span> common</td><td class="n">63,166,929</td><td class="n">~5.5%</td></tr><tr><td><span class="tick">FMCC</span> common</td><td class="n">53,214,820</td><td class="n">~8.2%</td></tr><tr><td><span class="tick">FNMAS</span></td><td class="n">113,814,610</td><td class="n">~40.6%</td></tr><tr><td><span class="tick">FMCKJ</span></td><td class="n">112,177,482</td><td class="n">~46.7%</td></tr><tr><td><span class="tick">FNMAT</span></td><td class="n">23,000,965</td><td class="n">~25.8%</td></tr><tr><td><span class="tick">FNMAJ</span></td><td class="n">5,163,498</td><td class="n">~24.4%</td></tr><tr><td><span class="tick">FNMAI</span></td><td class="n">1,926,787</td><td class="n">~12.8%</td></tr><tr><td><span class="tick">FNMFN</span></td><td class="n">6,547,976</td><td class="n">~13.1%</td></tr><tr><td><span class="tick">FNMAH</span></td><td class="n">2,022,626</td><td class="n">~5.1%</td></tr><tr><td><span class="tick">FMCKM</span></td><td class="n">1,966,652</td><td class="n">~4.5%</td></tr></tbody></table></div>
-    <p class="hint">Adds the Growth Fund of America (Aug 31, 2026), Investment Company of America (Jun 30, 2026) and Capital World Growth and Income Fund (Aug 31, 2026) positions, which have different dates.</p>
-    <p class="callout" style="color:var(--ink)"><strong>Investor note:</strong> Across these three funds, Capital Group holds about 41% of FNMAS and about 47% of FMCKJ, the two largest junior preferred issues, plus roughly a quarter of FNMAT and FNMAJ. A holder of this size would likely have a major voice in any restructuring, exchange offer or vote affecting these series, and a decision by Capital Group to buy or sell could move their prices.</p>
+      <tbody><tr><td><span class="tick">FNMA</span> common</td><td class="n">63,166,929</td><td class="n">~5.5%</td></tr><tr><td><span class="tick">FMCC</span> common</td><td class="n">53,214,820</td><td class="n">~8.2%</td></tr><tr><td><span class="tick">FNMAS</span></td><td class="n">113,814,610</td><td class="n">~40.6%</td></tr><tr><td><span class="tick">FMCKJ</span></td><td class="n">116,158,467</td><td class="n">~48.4%</td></tr><tr><td><span class="tick">FNMAT</span></td><td class="n">23,000,965</td><td class="n">~25.8%</td></tr><tr><td><span class="tick">FNMAJ</span></td><td class="n">5,163,498</td><td class="n">~24.4%</td></tr><tr><td><span class="tick">FNMAI</span></td><td class="n">1,926,787</td><td class="n">~12.8%</td></tr><tr><td><span class="tick">FNMFN</span></td><td class="n">6,547,976</td><td class="n">~13.1%</td></tr><tr><td><span class="tick">FNMAH</span></td><td class="n">2,586,994</td><td class="n">~6.5%</td></tr><tr><td><span class="tick">FMCKM</span></td><td class="n">1,966,652</td><td class="n">~4.5%</td></tr></tbody></table></div>
+    <p class="hint">Adds the Growth Fund of America (Aug 31, 2026), Investment Company of America (Jun 30, 2026), Capital World Growth and Income Fund (Aug 31, 2026) and SMALLCAP World Fund positions, which have different dates.</p>
+    <p class="callout" style="color:var(--ink)"><strong>Investor note:</strong> Across these four funds, Capital Group holds about 41% of FNMAS and about 48% of FMCKJ, the two largest junior preferred issues, plus roughly a quarter of FNMAT and FNMAJ. A holder of this size would likely have a major voice in any restructuring, exchange offer or vote affecting these series, and a decision by Capital Group to buy or sell could move their prices.</p>
+    <h3>T. Rowe Price Value Fund, portfolio holdings as of September 30, 2026<sup><a href="#fn-trpval" style="color:var(--accent)">15</a></sup></h3>
+    <div class="tablebox fit"><table>
+      <thead><tr><th>Common<br>stock</th><th class="n">Shares</th><th class="n">Approx. %<br>of common<br>outstanding</th></tr></thead>
+      <tbody>
+        <tr><td><span class="dot" style="--c:var(--fannie)"></span>FNMA · Fannie Mae</td><td class="n">9,293,125</td><td class="n">~0.8%</td></tr>
+      </tbody></table></div>
+    <p class="hint">Share count as listed in the fund’s September 30, 2026 quarterly portfolio holdings.</p>
+    <h3>Morgan Stanley funds: Growth, Global Insight and Discovery Portfolios<sup><a href="#fn-msgrowth" style="color:var(--accent)">16</a>,<a href="#fn-msinsight" style="color:var(--accent)">17</a>,<a href="#fn-msdisc" style="color:var(--accent)">18</a></sup></h3>
+    <div class="tablebox fit"><table>
+      <thead><tr><th>Fund</th><th>Common<br>stock</th><th class="n">Shares</th><th class="n">Approx. %<br>of common<br>outstanding</th></tr></thead>
+      <tbody>
+        <tr><td>Growth Portfolio<sup><a href="#fn-msgrowth" style="color:var(--accent)">16</a></sup></td><td><span class="dot" style="--c:var(--fannie)"></span>FNMA · Fannie Mae</td><td class="n">11,129,608</td><td class="n">~1.0%</td></tr>
+        <tr><td>Global Insight Portfolio<sup><a href="#fn-msinsight" style="color:var(--accent)">17</a></sup></td><td><span class="dot" style="--c:var(--fannie)"></span>FNMA · Fannie Mae</td><td class="n">167,076</td><td class="n">&lt;0.1%</td></tr>
+        <tr><td>Discovery Portfolio<sup><a href="#fn-msdisc" style="color:var(--accent)">18</a></sup></td><td><span class="dot" style="--c:var(--fannie)"></span>FNMA · Fannie Mae</td><td class="n">2,423,735</td><td class="n">~0.2%</td></tr>
+        <tr><td><strong>Morgan Stanley combined</strong></td><td><span class="dot" style="--c:var(--fannie)"></span>FNMA · Fannie Mae</td><td class="n"><strong>13,720,419</strong></td><td class="n"><strong>~1.2%</strong></td></tr>
+      </tbody></table></div>
+    <p class="hint">Share counts as listed in each fund’s latest reported holdings. “% of common outstanding” uses about 1.16 billion FNMA shares outstanding and is approximate.</p>
     <p class="callout" style="color:var(--ink)">Remember that disclosed positions reflect holdings as of each filing date and may have changed since.</p>
   </div>
 </section>
@@ -582,6 +604,11 @@ svg .lbl{fill:var(--ink)}
       <li id="fn-cbo"><sup>11</sup> Congressional Research Service, <a href="https://www.congress.gov/crs-product/R44525" target="_blank" rel="noopener">report R44525</a></li>
       <li id="fn-cnn"><sup>12</sup> CNN Money, <a href="https://money.cnn.com/2010/06/16/news/fannie_freddie_delisting/index.htm" target="_blank" rel="noopener">report on the Fannie Mae and Freddie Mac NYSE delisting</a>, June 16, 2010</li>
       <li id="fn-fred10"><sup>13</sup> Federal Reserve Bank of St. Louis (FRED), <a href="https://fred.stlouisfed.org/data/RIFLGFCY10NA" target="_blank" rel="noopener">Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity</a>, annual averages of daily figures</li>
+      <li id="fn-scwf"><sup>14</sup> Capital Group, <a href="https://capitalgroup.prospectus-express.com/summary.asp?doctype=phq4&amp;cid=capgroup&amp;fid=831681101" target="_blank" rel="noopener">SMALLCAP World Fund portfolio holdings</a></li>
+      <li id="fn-trpval"><sup>15</sup> T. Rowe Price, <a href="https://www.troweprice.com/literature/public/country/us/language/en/literature-type/portfolio-holdings/sub-type/quarterly?productCode=VAL&amp;currency=USD" target="_blank" rel="noopener">Value Fund quarterly portfolio holdings</a>, as of September 30, 2026</li>
+      <li id="fn-msgrowth"><sup>16</sup> Morgan Stanley Investment Management, <a href="https://www.morganstanley.com/im/en-us/individual-investor/products/mutual-funds/us-equity/growth-portfolio.html" target="_blank" rel="noopener">Growth Portfolio</a> holdings</li>
+      <li id="fn-msinsight"><sup>17</sup> Morgan Stanley Investment Management, <a href="https://www.morganstanley.com/im/en-us/individual-investor/products/mutual-funds/global-equity/global-insight-portfolio.html" target="_blank" rel="noopener">Global Insight Portfolio</a> holdings</li>
+      <li id="fn-msdisc"><sup>18</sup> Morgan Stanley Investment Management, <a href="https://www.morganstanley.com/im/en-us/individual-investor/products/mutual-funds/us-equity/discovery-portfolio.html" target="_blank" rel="noopener">Discovery Portfolio</a> holdings</li>
     </ul>
     <h4 id="alerts" style="margin:14px 0 6px;font:600 .9rem var(--f-display);color:var(--ink)">Sign up for policy announcements</h4>
     <ul style="margin:0;padding-left:1.2em;display:grid;gap:4px">
